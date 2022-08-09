@@ -19,14 +19,14 @@
 // | `     |  1  |  2  |   3   |  4  |  5  |                   ---                |  6    |  7    |  8    |  9   | 0    |     -     |
 // | TAB   |  Q  |  W  |   E   |  R  |  T  |   (   |           ---        |  )    |  Y    |  U    |  I    |  O   | P    |     =     |
 // | ESC   |  A  |  S  |   D   |  F  |  G  |   [   |           ---        |  ]    |  H    |  J    |  K    |  L   | ;    |     '     |
-// | SHIFT |  Z  |  X  |   C   |  V  |  B  | PG_UP | PG_DOWN | --- | HOME | END   |  N    |  M    |  ,    |  .   | /    |   SHIFT   |
-// | CRTL  | ALT | GUI | ADJUST|   LOWER   | BSPC  | DEL     | --- | RET  | SPACE |     RAISE     | NONE  | NONE | RALT |   RCTRL   |
+// | SHIFT |  Z  |  X  |   C   |  V  |  B  | DEL   | LALT    | --- | HOME | END   |  N    |  M    |  ,    |  .   | /    |   SHIFT   |
+// | CRTL  | ALT |ADJUS| GUI   |   LOWER   | BSPC  | LCTRL   | --- | RET  | SPACE |     RAISE     | NONE  | NONE | RALT |   RCTRL   |
             bindings = <
-   &kp GRAVE &kp N1   &kp N2   &kp N3 &kp N4   &kp N5                                        &kp N6    &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-   &kp TAB   &kp Q    &kp W    &kp E  &kp R    &kp T  &kp LPAR                     &kp RPAR  &kp Y     &kp U  &kp I     &kp O    &kp P    &kp EQUAL
-   &kp ESC   &kp A    &kp S    &kp D  &kp F    &kp G  &kp LBKT                     &kp RBKT  &kp H     &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-   &kp LSHFT &kp Z    &kp X    &kp C  &kp V    &kp B  &kp PG_UP &kp PG_DN &kp HOME &kp END   &kp N     &kp M  &kp COMMA &kp DOT  &kp FSLH &mt RSHFT RET
-   &kp LCTRL &kp LALT &kp LGUI &mo 3      &mo 1       &kp BSPC  &kp DEL   &kp RET  &kp SPACE       &mo 2      &none     &none    &kp RALT &kp RCTRL
+   &kp GRAVE &kp N1   &kp N2   &kp N3    &kp N4   &kp N5                                        &kp N6    &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
+   &kp TAB   &kp Q    &kp W    &kp E     &kp R    &kp T  &kp LPAR                     &kp RPAR  &kp Y     &kp U  &kp I     &kp O    &kp P    &kp EQUAL
+   &kp ESC   &kp A    &kp S    &kp D     &kp F    &kp G  &kp LBKT                     &kp RBKT  &kp H     &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+   &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B  &kp DEL   &kp LALT  &kp HOME &kp END   &kp N     &kp M  &kp COMMA &kp DOT  &kp FSLH &mt RSHFT RET
+   &kp LCTRL &kp LALT &mo 3    &kp LGUI      &mo 1       &kp BSPC  &kp LCTRL &kp RET  &kp SPACE       &mo 2      &none     &none    &kp RALT &kp RCTRL
             >;
 
         };
@@ -36,8 +36,8 @@
 // | `     |  1  |  2  |   3   |   4   |  5    |                       ---                   |  6  |  7  |  8   |  9   |  0    |  -     |
 // | ESC   |  1  |  2  |   3   |   4   |  5    |   (     |             ---           |  )    |  6  |  7  |  8   |  9   |  0    |  DEL   |
 // | ESC   |  -  |  =  |   [   |   ]   |  \    |   [     |             ---           |  ]    |  *  |  4  |  5   |  6   |  +    |  RET   |
-// | SHIFT | NONE| NONE| COPY  | PASTE | GRAVE | PG_UP   | PG_DOWN |   ---   | HOME  | END   |  \  |  1  |  2   |  3   |  -    |  RET   |
-// | CRTL  | ALT | GUI | ADJUST|     LOWER     | BSPC    | DEL     |   ---   | RET   | SPACE |   RAISE   | NONE | NONE |  RALT |  RCTRL |
+// | SHIFT | NONE| NONE| COPY  | PASTE | GRAVE | DEL     | LALT    |   ---   | HOME  | END   |  \  |  1  |  2   |  3   |  -    |  RET   |
+// | CRTL  | ALT |ADJUS| GUI   |     LOWER     | BSPC    | LCTRL   |   ---   | RET   | SPACE |   RAISE   | NONE | NONE |  RALT |  RCTRL |
             bindings = <
    &trans  &trans    &trans    &trans    &trans    &trans                                &trans          &trans    &trans    &trans    &trans       &trans
    &kp ESC &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &trans               &trans &kp N6          &kp N7    &kp N8    &kp N9    &kp N0       &kp DEL
@@ -52,8 +52,8 @@
 // | ESC   |  1  |  2  |   3   |  4  |  5  |                   ---                |  6   |  7   |  8   |  9   |  0    |  DEL  |
 // | ESC   |  !  |  @  |   #   |  $  |  %  |   (   |           ---        |  )    |  ^   |  &   |  *   |  (   |  )    |  DEL  |
 // | ESC   |  _  |  +  |   {   |  }  | "|" |   [   |           ---        |  ]    | LEFT | DOWN | UP   | RIGHT|       |  RET  |
-// | SHIFT | NONE| NONE|   (   |  )  |  ~  | PG_UP | PG_DOWN | --- | HOME | END   | HOME | PGDN | PGUP | END  | PRCNT |  RET  |
-// | CRTL  | ALT | GUI | ADJUST|    GUI    | BSPC  | DEL     | --- | RET  | SPACE |    RAISE    | NONE | NONE |  RALT |  RCTRL|
+// | SHIFT | NONE| NONE|   (   |  )  |  ~  | DEL   | LALT    | --- | HOME | END   | HOME | PGDN | PGUP | END  | PRCNT |  RET  |
+// | CRTL  | ALT |ADJUS| GUI   |   LOWER   | BSPC  | LCTRL   | --- | RET  | SPACE |    RAISE    | NONE | NONE |  RALT |  RCTRL|
             bindings = <
    &kp ESC &trans    &trans   &trans   &trans   &trans                                &trans    &trans    &trans    &trans    &trans    &trans
    &kp ESC &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT &trans               &trans &kp CARET &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR  &kp DEL
@@ -68,8 +68,8 @@
 // |  F1   |  F2   |    F3    |    F4     |     F5     | F6 |                   ---                | F7  | F8  |  F9  |  F10 | F11 | F12        |
 // | TAB   |       |          |           |            |    | BOOTL |           ---        |  )    | BT1 | BT2 |  BT3 |  BT4 | BT5 | OUTPUT TGL |
 // | CTRL  | MUTE  |  Vol Dn  |  Vol Up   | Play/Pause |    | RESET |           ---        |  ]    | F1  | F2  |  F3  |  F4  | F5  | F6         |
-// | SHIFT | PSCRN |  PSCRN   |   CAPS    |            |    | PG_UP | PG_DOWN | --- | HOME | END   | F7  | F8  |  F9  |  F10 | F11 | F12        |
-// | CRTL  | ALT   |  GUI     |   ADJUST  |      GUI        | BSPC  | DEL     | --- | RET  | SPACE |   RAISE   | LEFT | DOWN | UP  |   RIGHT    |
+// | SHIFT | PSCRN |  PSCRN   |   CAPS    |            |    | DEL   | LALT    | --- | HOME | END   | F7  | F8  |  F9  |  F10 | F11 | F12        |
+// | CRTL  | ALT   |  ADJUS   |   GUI     |        LOWER    | BSPC  | LCTRL   | --- | RET  | SPACE |   RAISE   | LEFT | DOWN | UP  |   RIGHT    |
                         bindings = <
    &kp F1  &kp F2     &kp F3       &kp F4       &kp F5           &kp F6                                 &kp F7       &kp F8       &kp F9       &kp F10      &kp F11       &kp F12
    &trans  &none      &none        &none        &none            &none  &bootloader          &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &out OUT_TOG
