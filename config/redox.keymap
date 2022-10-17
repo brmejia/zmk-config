@@ -11,6 +11,15 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    behaviors {
+        lsh_capwrd: lshift_capsword {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
+    };
     keymap {
         compatible =  "zmk,keymap" ;
 
@@ -34,7 +43,6 @@
      &kp LCTRL       &kp LALT        &mo 3           &kp LGUI                    &mo 1               &kp BSPC        &kp LCTRL          &kp RET         &kp SPACE                   &mo 2               &none           &none           &kp RALT        &kp RCTRL
 // ╰───────────────┴───────────────┴───────────────┴───────────────┴───────────────────────────────┴───────────────┴───────────────╯  ╰───────────────┴───────────────┴───────────────────────────────┴───────────────┴───────────────┴───────────────┴───────────────╯
             >;
-
         };
 
         lower_layer {
@@ -84,21 +92,21 @@
         adjust_layer {
 // -----------------------------------------------------------------------------------------
 // |  F1   |  F2   |    F3    |    F4     |     F5     | F6 |                   ---                | F7  | F8  |  F9  |  F10 | F11 | F12        |
-// | TAB   |       |          |           |            |    | BOOTL |           ---        |  )    | BT1 | BT2 |  BT3 |  BT4 | BT5 | OUTPUT TGL |
+// | TAB   |       |          |           |            |    | BOOTL |           ---        | BTCLR | BT1 | BT2 |  BT3 |  BT4 | BT5 | OUTPUT TGL |
 // | CTRL  | MUTE  |  Vol Dn  |  Vol Up   | Play/Pause |    | RESET |           ---        |  ]    | F1  | F2  |  F3  |  F4  | F5  | F6         |
 // | SHIFT | PSCRN |  PSCRN   |   CAPS    |            |    | DEL   | LALT    | --- | HOME | END   | F7  | F8  |  F9  |  F10 | F11 | F12        |
 // | CRTL  | ALT   |  ADJUS   |   GUI     |        LOWER    | BSPC  | LCTRL   | --- | RET  | SPACE |   RAISE   | LEFT | DOWN | UP  |   RIGHT    |
-                        bindings = <
+            bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                                                  ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-     &kp f1          &kp f2          &kp f3          &kp f4          &kp f5           &kp f6                                                                            &kp f7          &kp f8          &kp f9          &kp f10         &kp f11         &kp f12
+     &kp F1          &kp F2          &kp F3          &kp F4          &kp F5           &kp F6                                                                            &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp F12
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╮                                  ╭───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &none           &none           &none           &none            &none          &bootloader                                        &bt bt_clr      &bt bt_sel 0    &bt bt_sel 1    &bt bt_sel 2    &bt bt_sel 3    &bt bt_sel 4    &out out_tog
+     &trans          &none           &none           &none           &none            &none          &bootloader                                        &bt BT_CLR      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &out OUT_TOG
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                                  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &kp k_mute      &kp c_vol_dn    &kp c_vol_up    &kp c_play_pause &none          &reset                                             &trans          &kp f1          &kp f2          &kp f3          &kp f4          &kp f5          &kp f6
+     &trans          &kp K_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp C_PLAY_PAUSE &none          &reset                                             &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╮  ╭───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &kp pscrn       &kp pscrn       &kp clck        &none            &none          &trans          &trans             trans           &trans          &kp f7          &kp f8          &kp f9          &kp f10         &kp f11         &kp f12
+     &trans          &kp PSCRN       &kp PSCRN       &kp CLCK        &none            &none          &trans          &trans             &trans          &trans          &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp F12
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &trans          &trans          &trans                     &trans               &trans          &trans             trans           &trans                      &trans              &trans          &trans          &trans          &trans
+     &trans          &trans          &trans          &trans                     &trans               &trans          &trans             &trans          &trans                      &trans              &trans          &trans          &trans          &trans
 // ╰───────────────┴───────────────┴───────────────┴───────────────┴───────────────────────────────┴───────────────┴───────────────╯  ╰───────────────┴───────────────┴───────────────────────────────┴───────────────┴───────────────┴───────────────┴───────────────╯
             >;
         };
