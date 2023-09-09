@@ -38,19 +38,19 @@
 // | `     |  1  |  2  |   3   |  4  |  5  |                   ---                |  6    |  7    |  8    |  9   | 0    |     -     |
 // | TAB   |  Q  |  W  |   E   |  R  |  T  |   (   |           ---        |  )    |  Y    |  U    |  I    |  O   | P    |     =     |
 // | ESC   |  A  |  S  |   D   |  F  |  G  |   [   |           ---        |  ]    |  H    |  J    |  K    |  L   | ;    |     '     |
-// | SHIFT |  Z  |  X  |   C   |  V  |  B  | DEL   | LALT    | --- | HOME | END   |  N    |  M    |  ,    |  .   | /    |   SHIFT   |
-// | CRTL  | ALT |ADJUS| GUI   |   LOWER   | BSPC  | LCTRL   | --- | RET  | SPACE |     RAISE     | NONE  | NONE | RALT |   RCTRL   |
+// | SHIFT |  Z  |  X  |   C   |  V  |  B  | NONE  | NONE    | --- | NONE | NONE  |  N    |  M    |  ,    |  .   | /    |   SHIFT   |
+// | CRTL  | ALT |ADJUS| GUI   | LOWER/DEL | BSPC  | TAB     | --- | RET  | SPACE |     RAISE     | NONE  | NONE | RALT |   RCTRL   |
             bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                                                  ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
      &kp GRAVE       &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                                                                             &kp N6          &kp N7          &kp N8          &kp N9          &kp N0          &kp MINUS
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╮                                  ╭───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp T           &kp LPAR                                           &kp RPAR        &kp Y           &kp U           &kp I           &kp O           &kp P           &kp EQUAL
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                                  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &kp ESC         &kp A           &kp S           &kp D           &kp F           &kp G           &kp LBKT                                           &kp RBKT        &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
+     &kp ESC         &mt LGUI A      &mt LALT S      &mt LCTRL D     &mt LSHFT F     &kp G           &kp LBKT                                           &kp RBKT        &kp H           &mt RSHFT J     &mt RCTRL K     &mt LALT L      &mt LGUI SEMI   &kp SQT
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╮  ╭───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &lshft_capwrd   &kp Z           &kp X           &kp C           &kp V           &kp B           &kp DEL         &kp LALT           &kp HOME        &kp END         &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RSHFT
+     &lshft_capwrd   &kp Z           &kp X           &kp C           &kp V           &kp B           &none           &none              &none           &none           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &none
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &kp LCTRL       &kp LALT        &mo ADJUS       &kp LGUI                &mo LOWER               &kp BSPC        &kp LCTRL          &kp RET         &kp SPACE                &mo RAISE              &none           &none           &kp RALT        &kp RCTRL
+     &kp LCTRL       &kp LALT        &mo ADJUS       &kp LGUI                &mt LOWER DEL           &kp BSPC        &kp TAB            &kp RET         &kp SPACE                &mo RAISE              &none           &none           &kp RALT        &kp RCTRL
 // ╰───────────────┴───────────────┴───────────────┴───────────────┴───────────────────────────────┴───────────────┴───────────────╯  ╰───────────────┴───────────────┴───────────────────────────────┴───────────────┴───────────────┴───────────────┴───────────────╯
             >;
         };
