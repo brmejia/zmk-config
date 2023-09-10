@@ -28,11 +28,11 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&caps_word>;
         };
-        hm: homerow_mods {
+        ht_tp: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOLD_TAP_TAP_PREFERRED";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -55,7 +55,7 @@
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╮                                  ╭───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp T           &kp LPAR                                           &kp RPAR        &kp Y           &kp U           &kp I           &kp O           &kp P           &kp EQUAL
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                                  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &kp ESC         &hm LGUI A      &hm LALT S      &hm LCTRL D     &hm LSHFT F     &kp G           &kp LBKT                                           &kp RBKT        &kp H           &hm RSHFT J     &hm RCTRL K     &hm LALT L      &hm LGUI SEMI   &kp SQT
+     &kp ESC         &ht_tp LGUI A   &ht_tp LALT S   &ht_tp LCTRL D  &ht_tp LSHFT F  &kp G           &kp LBKT                                           &kp RBKT        &kp H           &ht_tp RSHFT J  &ht_tp RCTRL K  &ht_tp LALT L   &ht_tp LGUI SEMI   &kp SQT
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╮  ╭───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &lshft_capwrd   &kp Z           &kp X           &kp C           &kp V           &kp B           &none           &none              &none           &none           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &none
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
