@@ -4,10 +4,15 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: brmejia
+      url-base: https://github.com/brmejia
   projects:
     - name: zmk
       remote: urob
       revision: main
       import: app/west.yml
+    - name: zmk-helpers
+      remote: brmejia
+      revision: ft-keymap-70key-redox
   self:
     path: config
