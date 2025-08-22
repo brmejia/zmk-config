@@ -79,6 +79,10 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
+
+ZMK_COMBO(toggle_game_layer, &tog GAME, LB2 LB1, DEFAULT GAME)
+
+
 / {
     behaviors {
         lshft_capwrd: behavior_lshift_capsword {
